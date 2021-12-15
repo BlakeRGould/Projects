@@ -1,0 +1,68 @@
+Purpose:
+  To edit photos by manipulating their pixels
+
+Running:
+  Select display as your main for running.
+  Ensure all photos are in the main project folder.
+  If you would like to sub a photo of mine out for your own,
+  remove my photo from the folder, add yours, and then change
+  the name of one of the images in the display constructor in 
+  display.java.
+
+Selecting A Photo: 
+  There are two lists on the screen when the program is ran. 
+  The top list allows you to select which photo that you want to 
+  manipulate. The second list's selection is only used for the 
+  overlay function and will not change anything as long as the 
+  overlay button is not pressed.
+  
+Functions:
+  Overlay:
+    This button will place the images selected in the second list 
+    on top of the selected image in the first list. This is done
+    by taking the average of the rgb ints in each photo and setting
+    those averages as the colors of the newly created photo.
+  Black and White:
+    Turns image black and white, by setting the red and green rgb #'s
+    to the blue's rgb # since shades of gray are created when all three
+    (r, g, b) are equal.
+  Basic Colors:
+    This function takes each pixel and finds which of the following colors
+    is closest to it: Blue, Purple, Red, Green, Yellow, Black, White, 
+    Orange. It then sets that pixel to that color.
+  Minimalize:
+    This function has multiple number options. I will use the *2 as an example
+    and the rest will explain itself. This function takes the top left corner
+    of every 2*2 square of pixels and sets all pixels in said square to the top
+    left corners colors. After doing so, the function takes colors within a range
+    of RGB 60 and colorizes those whithin the range equally. In other words, if 
+    colors are similar, they will become the same.
+  Shrink:
+    This function shrinks the image by first doing the first step of minimalizing
+    (creating squares within the image) and then reducing that image by making each
+    square only one pixel. 
+  Reflect Verticaly:
+    This function reflects the image over a median vertical line. Essentially, the 
+    algorithm starts at the median and a counter counts as the loop goes through 
+    each horizontal line. Each pixel is set to the colors of the pixel "counter" spaces
+    away from itself horizontally and equal to itself vertically. The counter resets 
+    when the vertical position changes.
+  Reflect Horizontally:
+    This function works the same as "Reflect Vertically" except it does so over a median
+    horizontal line. 
+  Negative:
+    This function negates the image by subtracting each rgb component from 255 and then 
+    setting each component to that new value. ex. 255 -> 0 ex2. 200 -> 55.
+  Darker:
+    This function makes the image darker by dividing each rgb component by 2 and then 
+    setting each component to that new value.
+  Reflect Both:
+    Performs "Reflect Vertically" and "Reflect Horiszontally."
+  RESET:
+    Resets the selected image to how it was originally.
+  Stack Filters Toggle:
+    This toggle button will determine if you can stack filters or not. If filters are able 
+    to be stacked then multiple changes can be made at once. However, this may cause some errors.
+    
+    
+  
